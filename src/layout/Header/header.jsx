@@ -35,7 +35,6 @@ const Header = () => {
       setEventFiltersInfo(res.eventFiltersInfo);
     };
 
-    console.log("fetch user");
     fetchUser();
   }, [token]);
 

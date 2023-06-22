@@ -5,20 +5,19 @@ import facebook from "./assets/facebook.png";
 import yandex from "./assets/yandex.png";
 import Button from "../../ui/Button/Button";
 import { useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import RouteLink from "../../ui/RouteLink/RouteLink";
 import Input from "../../ui/Input/Input";
 import { useToken } from "../../app/global/providers/TokenProvider/lib/useToken";
 
-
 const Form = () => {
   const [formState, setFormState] = useState({ login: "", password: "" });
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLoginBtn, setIsLoginBtn] = useState(true);
 
   const navigate = useNavigate();
 
-  const toggleLogin = () => {
-    setIsLogin(!isLogin);
+  const toggleLoginBtn = () => {
+    setIsLoginBtn(!isLoginBtn);
   };
 
   const loginHandler = (login) => {
@@ -29,37 +28,36 @@ const Form = () => {
     setFormState({ ...formState, password: password });
   };
 
-
-  const {getToken, errorMsg} = useToken()
+  const { getToken, errorMsg } = useToken();
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    await getToken(formState)
+    await getToken(formState, navigate, '/');
   };
 
   return (
     <form className={css.account_form} onSubmit={formSubmit}>
-      <img src={lock} alt='' className={css.lock} />
+      <img src={lock} alt="" className={css.lock} />
       <div className={css.button_block}>
         <button
           className={css.button}
           style={
-            isLogin
+            isLoginBtn
               ? { color: "#029491", borderColor: "#029491" }
               : { color: "#C7C7C7" }
           }
-          onClick={() => (!isLogin ? toggleLogin() : null)}
+          onClick={() => (!isLoginBtn ? toggleLoginBtn() : null)}
         >
           Войти
         </button>
         <button
           className={css.button}
           style={
-            !isLogin
+            !isLoginBtn
               ? { color: "#029491", borderColor: "#029491" }
               : { color: "#C7C7C7" }
           }
-          onClick={() => (isLogin ? toggleLogin() : null)}
+          onClick={() => (isLoginBtn ? toggleLoginBtn() : null)}
         >
           Зарегистрироваться
         </button>
@@ -78,7 +76,7 @@ const Form = () => {
         handler={passwordHandler}
         // error={errorMsg}
       />
-      <Button path="/" text={isLogin ? "Войти" : "Зарегистрироваться"}></Button>
+      <Button path="/" text={isLoginBtn ? "Войти" : "Зарегистрироваться"}></Button>
       <RouteLink path="/register" className={css.reset}>
         Восстановить пароль
       </RouteLink>

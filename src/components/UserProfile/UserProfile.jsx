@@ -1,7 +1,6 @@
 import React from 'react';
-import css from './UserProfile.module.css';
 import Button from '../../ui/Button/Button';
-
+import css from './UserProfile.module.css';
 
 export const UserProfile = ({ name, image, text, logOut }) => {
   return (

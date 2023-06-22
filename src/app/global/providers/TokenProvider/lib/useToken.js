@@ -10,7 +10,7 @@ export function useToken() {
   const [errorMsg, setErrorMsg] = useState(null);
   // const navigate = useNavigate();
 
-  const getToken = async (authObj, path) => {
+  const getToken = async (authObj, navigate, path) => {
     if (!token) {
       const resBody = JSON.stringify(authObj);
       const req = await fetch(
@@ -40,6 +40,7 @@ export function useToken() {
           JSON.stringify(res.expire)
         );
         setToken(res.accessToken);
+        navigate(path)
       }
     }
   };
