@@ -35,7 +35,9 @@ const Header = () => {
       setEventFiltersInfo(res.eventFiltersInfo);
     };
 
-    fetchUser();
+    if (token) {
+      fetchUser();
+    }
   }, [token]);
 
   const toggleMenu = () => {
