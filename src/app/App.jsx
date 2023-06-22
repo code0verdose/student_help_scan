@@ -1,4 +1,4 @@
-import "./global/global.module.css";
+import "./global/styles/global.css";
 import { RouterProvider } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { TokenProvider } from "./global/providers/TokenProvider";
