@@ -1,5 +1,5 @@
-import css from './checkbox.module.css'
-const Checkbox = ({text, id}) => {
+import css from "./checkbox.module.css";
+const Checkbox = ({ text, id }) => {
   return (
     <div>
       <div className={css.checkbox}>

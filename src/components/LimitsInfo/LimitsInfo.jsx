@@ -8,7 +8,6 @@ export const LimitsInfo = ({
   isLoading,
   className,
 }) => {
-
   const rootClassName = [css.box, className];
 
   if (isAuth) {

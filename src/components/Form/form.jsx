@@ -32,7 +32,7 @@ const Form = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    await getToken(formState, navigate, '/');
+    await getToken(formState, navigate, "/");
   };
 
   return (
@@ -76,7 +76,10 @@ const Form = () => {
         handler={passwordHandler}
         // error={errorMsg}
       />
-      <Button path="/" text={isLoginBtn ? "Войти" : "Зарегистрироваться"}></Button>
+      <Button
+        path="/"
+        text={isLoginBtn ? "Войти" : "Зарегистрироваться"}
+      ></Button>
       <RouteLink path="/register" className={css.reset}>
         Восстановить пароль
       </RouteLink>

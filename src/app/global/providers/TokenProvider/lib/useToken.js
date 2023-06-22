@@ -8,7 +8,6 @@ import {
 export function useToken() {
   const { token, setToken } = useContext(TokenContext);
   const [errorMsg, setErrorMsg] = useState(null);
-  // const navigate = useNavigate();
 
   const getToken = async (authObj, navigate, path) => {
     if (!token) {
@@ -40,7 +39,7 @@ export function useToken() {
           JSON.stringify(res.expire)
         );
         setToken(res.accessToken);
-        navigate(path)
+        navigate(path);
       }
     }
   };

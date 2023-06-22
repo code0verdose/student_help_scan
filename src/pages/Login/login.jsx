@@ -3,7 +3,6 @@ import people from "./assets/Characters.png";
 import Form from "../../components/Form/form";
 
 const Login = () => {
-
   return (
     <div className={css.loginPage}>
       <h1 className={css.header}>

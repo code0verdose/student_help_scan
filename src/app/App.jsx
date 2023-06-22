@@ -1,5 +1,5 @@
 import "./global/global.module.css";
-import { RouterProvider} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { TokenProvider } from "./global/providers/TokenProvider";
 import { router } from "./global/providers/Router/Routes";
