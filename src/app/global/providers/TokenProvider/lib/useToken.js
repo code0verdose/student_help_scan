@@ -9,9 +9,9 @@ export function useToken() {
   const { token, setToken } = useContext(TokenContext);
   const [errorMsg, setErrorMsg] = useState(null);
 
-  const getToken = async (authObj, navigate, path) => {
+  const getToken = async (credentials, navigate, path) => {
     if (!token) {
-      const resBody = JSON.stringify(authObj);
+      const reqBody = JSON.stringify(credentials);
       const req = await fetch(
         `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_LOGIN_ENDPOINT}`,
         {
@@ -19,17 +19,15 @@ export function useToken() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: resBody,
+          body: reqBody,
         }
       );
       const res = await req.json();
 
       if (res.message) {
         setErrorMsg(res.message);
-        return res.message;
       }
       if (res.accessToken) {
-        // navigate("/");
         localStorage.setItem(
           LOCAL_STORAGE_TOKEN_KEY,
           JSON.stringify(res.accessToken)

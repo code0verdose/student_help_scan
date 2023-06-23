@@ -18,7 +18,6 @@ const Header = () => {
   const [eventFiltersInfo, setEventFiltersInfo] = useState(null);
 
   const { token } = useContext(TokenContext);
-
   const { logOut } = useToken();
 
   useEffect(() => {

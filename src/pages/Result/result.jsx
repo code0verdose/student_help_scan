@@ -25,7 +25,7 @@ const Result = () => {
           <Slider></Slider>
         </div>
         <div className={css.image}>
-          <img src={helen} />
+          <img src={helen} alt="ph" />
         </div>
       </section>
       <section className={css.results}>
