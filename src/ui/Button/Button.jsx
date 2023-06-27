@@ -1,9 +1,9 @@
 import css from "./Button.module.css";
-const Button = ({ text, children, className, handler }) => {
+const Button = ({ text, children, className, handler, isDisabled }) => {
   const rootClassName = [css.button, className];
 
   return (
-    <button onClick={handler} className={rootClassName.join(" ")}>
+    <button disabled={isDisabled} onClick={handler} className={rootClassName.join(" ")}>
       {text}
     </button>
   );

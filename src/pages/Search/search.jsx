@@ -4,65 +4,15 @@ import document from "./assets/Document.png";
 import folder from "./assets/Folders.png";
 import Button from "../../ui/Button/Button";
 import Checkbox from "../../ui/Checkbox/checkbox";
-import { useState } from "react";
+import { params } from "./data/formParams";
 import { useForm } from "../../api/hooks/useForm";
+import { useContext } from "react";
+import { TokenContext } from "../../app/global/providers/TokenProvider";
 
 const Search = () => {
-  // const [formState, setFormState] = useState({});
-
-  // const updateData = (e) => {
-  //   setFormState({
-  //     ...formState,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
-
-  // const formSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log(formState);
-  // };
-
-  
-
-  const { formData, handleSubmit, handleChange } = useForm()
-  console.log(formData);
-  const params = [
-    {
-      text: "Признак максимальной полноты",
-      id: 1,
-      name: "maxFullness",
-    },
-    {
-      text: "Упоминания в бизнес-контексте",
-      id: 2,
-      name: "inBusinessNews",
-    },
-    {
-      text: "Главная роль в публикации",
-      id: 3,
-      name: "onlyMainRole",
-    },
-    {
-      text: "Публикации только с риск-факторами",
-      id: 4,
-      name: "onlyWithRiskFactors",
-    },
-    {
-      text: "Включать технические новости рынков",
-      id: 5,
-      name: "excludeTechNews",
-    },
-    {
-      text: "Включать анонсы и календари",
-      id: 6,
-      name: "excludeAnnouncements",
-    },
-    {
-      text: "Включать сводки новостей",
-      id: 7,
-      name: "excludeDigests",
-    },
-  ];
+  const { token } = useContext(TokenContext);
+  const { handleSubmit, handleChange, responseData } = useForm();
+  console.log(responseData);
 
   return (
     <section className={css.search}>
@@ -107,7 +57,7 @@ const Search = () => {
           <input
             id="docs"
             type="number"
-            name="documentCount"
+            name="limit"
             placeholder="От 1 до 1000"
             min={"1"}
             max={"1000"}
@@ -152,7 +102,7 @@ const Search = () => {
             ></Checkbox>
           ))}
           <div className={css.search_button}>
-            <Button text={"Поиск"}></Button>
+            <Button isDisabled={!token ? true : false} text={"Поиск"}></Button>
           </div>
           <span>* Обязательные к заполнению поля</span>
         </div>

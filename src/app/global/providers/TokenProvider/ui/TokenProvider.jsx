@@ -1,6 +1,21 @@
 import React, { useMemo, useState } from "react";
 import { TokenContext, LOCAL_STORAGE_TOKEN_KEY } from "../lib/TokenContext";
 
+const expireToken = JSON.parse(localStorage.getItem("expire")) ?? null;
+
+const checkTokenExpire = () => {
+  const todayTimestampt = Date.now();
+  const expireTimestampt = +new Date(expireToken);
+
+  if (!expireToken) {
+    return null;
+  } else if (todayTimestampt > expireTimestampt) {
+    localStorage.clear();
+  }
+};
+
+checkTokenExpire();
+
 const defaultToken =
   JSON.parse(localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)) ?? null;
 
