@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/student_help_scan/static/css/main.ba53ff6f.css",
+    "main.js": "/student_help_scan/static/js/main.85d07300.js",
+    "static/media/2717-font.otf": "/student_help_scan/static/media/2717-font.8d1c2bfebe1bfba898ae.otf",
+    "static/media/Bobby.png": "/student_help_scan/static/media/Bobby.b8ec92ddbd19d1b3ddd5.png",
+    "static/media/Larry.png": "/student_help_scan/static/media/Larry.36bbef2068d7ac0e4e7d.png",
+    "static/media/artyom.webp": "/student_help_scan/static/media/artyom.12fe7e0c106e0ae3155d.webp",
+    "static/media/Helen.png": "/student_help_scan/static/media/Helen.1272057ca1ab6b99523d.png",
+    "static/media/rocketman.png": "/student_help_scan/static/media/rocketman.2faf7e5e8ee7aef5640d.png",
+    "static/media/Characters.png": "/student_help_scan/static/media/Characters.fa148d2e9e726fa8530a.png",
+    "index.html": "/student_help_scan/index.html",
+    "main.ba53ff6f.css.map": "/student_help_scan/static/css/main.ba53ff6f.css.map",
+    "main.85d07300.js.map": "/student_help_scan/static/js/main.85d07300.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ba53ff6f.css",
+    "static/js/main.85d07300.js"
+  ]
+}
