@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/student_help_scan/static/css/main.ba53ff6f.css",
-    "main.js": "/student_help_scan/static/js/main.15a8c7f2.js",
+    "main.js": "/student_help_scan/static/js/main.5ed526f4.js",
     "static/media/2717-font.otf": "/student_help_scan/static/media/2717-font.8d1c2bfebe1bfba898ae.otf",
     "static/media/Bobby.png": "/student_help_scan/static/media/Bobby.b8ec92ddbd19d1b3ddd5.png",
     "static/media/Larry.png": "/student_help_scan/static/media/Larry.36bbef2068d7ac0e4e7d.png",
@@ -11,10 +11,10 @@
     "static/media/Characters.png": "/student_help_scan/static/media/Characters.fa148d2e9e726fa8530a.png",
     "index.html": "/student_help_scan/index.html",
     "main.ba53ff6f.css.map": "/student_help_scan/static/css/main.ba53ff6f.css.map",
-    "main.15a8c7f2.js.map": "/student_help_scan/static/js/main.15a8c7f2.js.map"
+    "main.5ed526f4.js.map": "/student_help_scan/static/js/main.5ed526f4.js.map"
   },
   "entrypoints": [
     "static/css/main.ba53ff6f.css",
-    "static/js/main.15a8c7f2.js"
+    "static/js/main.5ed526f4.js"
   ]
 }
