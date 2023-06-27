@@ -6,7 +6,6 @@ const HISTOGRAM_URL = `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_
 const OBJECT_SEARCH_URL = `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_SEARCH}`;
 const DOC_SEARCH_URL = `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_SEARCH_DOC}`;
 
-
 export const useForm = () => {
   const { token } = useContext(TokenContext);
   const navigate = useNavigate();
@@ -28,7 +27,7 @@ export const useForm = () => {
 
   const [histogramData, setHistogramData] = useState([]);
   const [resError, setResError] = useState(null);
-  const [encodedId, setEncodedId] = useState({})
+  const [encodedId, setEncodedId] = useState({});
 
   const formFetcher = (url, requestBody, stateCB, errCB, sessionKey) => {
     if (token) {
@@ -144,6 +143,6 @@ export const useForm = () => {
     handleSubmit,
     handleChange,
     histogramData,
-    encodedId
+    encodedId,
   };
 };

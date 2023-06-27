@@ -22,20 +22,22 @@ const Result = () => {
       ids: [`${encodedID.items[0].encodedId}`],
     });
 
-
-    const req = fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: requestBody,
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    if (encodedID) {
+      const req = fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: requestBody,
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+    }
   };
 
-  fetchDocuments()
+  fetchDocuments();
 
   return (
     <>

@@ -4,7 +4,9 @@ import { HistogramResult } from "../../ui/HistogramResult/HistogramResult";
 import { useForm } from "../../api/hooks/useForm";
 
 const Historgam = () => {
-  const data = JSON.parse(sessionStorage.getItem(process.env.REACT_APP_LS_KEY_HISTOGRAMS));
+  const data = JSON.parse(
+    sessionStorage.getItem(process.env.REACT_APP_LS_KEY_HISTOGRAMS)
+  );
   const totalDocuments = data.data[0];
   const riskFactors = data.data[1];
 
