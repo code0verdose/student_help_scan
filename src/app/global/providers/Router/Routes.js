@@ -3,11 +3,11 @@ import Login from "../../../../pages/Login/login";
 import Search from "../../../../pages/Search/search";
 import Result from "../../../../pages/Result/result";
 import NotFound from "../../../../pages/NotFound/NotFound";
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
-    path: "/",
+    path: "/*",
     element: <Main />,
   },
   {
