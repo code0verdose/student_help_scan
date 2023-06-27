@@ -9,8 +9,12 @@ import Button from "../../ui/Button/Button";
 import Card from "../../components/Card/Card";
 import { Link } from "react-router-dom";
 import { slideItem } from "./assets/sliderItem";
+import { useContext } from "react";
+import { TokenContext } from "../../app/global/providers/TokenProvider";
 
 const Main = () => {
+  const { token } = useContext(TokenContext);
+
   return (
     <div className={css.main}>
       <section className={css.about_us}>
@@ -23,7 +27,10 @@ const Main = () => {
           <div className={css.but_container}>
             <Link to="search">
               {" "}
-              <Button text={"Запросить данные"} />{" "}
+              <Button
+                isDisabled={!token ? true : false}
+                text={"Запросить данные"}
+              />{" "}
             </Link>
           </div>
         </div>

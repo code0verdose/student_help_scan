@@ -6,16 +6,17 @@
   align-items: center;
 }
 .table {
-  width: 100%;
+  max-width: 90vw;
   border: 2px solid #029491;
   border-radius: 13px;
   height: 158px;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   /* justify-content: space-between; */
 }
 .example {
-  width: 133px;
+  min-width: 133px;
   color: #fff;
   background-color: #029491;
   font-size: 20px;

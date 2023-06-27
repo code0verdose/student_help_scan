@@ -5,8 +5,38 @@ import Document from "../../components/Document/document";
 import Button from "../../ui/Button/Button";
 import larry from "./assets/Helen.png";
 import Historgam from "../../components/Historgam/Histogram";
+import { useContext } from "react";
+import { TokenContext } from "../../app/global/providers/TokenProvider";
+
+const encodedID = JSON.parse(
+  sessionStorage.getItem(process.env.REACT_APP_LS_KEY_ENCODED_ID) ?? null
+);
 
 const Result = () => {
+  const { token } = useContext(TokenContext);
+
+  const fetchDocuments = () => {
+    const url = `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_SEARCH_DOC}`;
+
+    const requestBody = JSON.stringify({
+      ids: [`${encodedID.items[0].encodedId}`],
+    });
+
+
+    const req = fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: requestBody,
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
+  fetchDocuments()
+
   return (
     <>
       {" "}
